@@ -1,0 +1,41 @@
+{
+  "name": "orin-code-vscode",
+  "displayName": "Orin Code",
+  "description": "Orin AI chat in your editor — explain, write, and fix code. No keys needed.",
+  "version": "1.0.0",
+  "publisher": "orinai",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["AI", "Chat", "Programming"],
+  "activationEvents": ["onView:orinChat"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        { "id": "orin", "title": "Orin Code", "icon": "media/bolt.svg" }
+      ]
+    },
+    "views": {
+      "orin": [
+        { "id": "orinChat", "name": "Orin Chat" }
+      ]
+    },
+    "commands": [
+      { "command": "orin.signIn", "title": "Orin: Sign in" },
+      { "command": "orin.signOut", "title": "Orin: Sign out" },
+      { "command": "orin.explainSelection", "title": "Orin: Explain selection" },
+      { "command": "orin.newChat", "title": "Orin: New chat" }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0"
+  }
+}
