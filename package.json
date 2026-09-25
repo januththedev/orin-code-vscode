@@ -22,6 +22,16 @@
         { "id": "orinChat", "name": "Orin Chat" }
       ]
     },
+    "configuration": {
+      "title": "Orin Code",
+      "properties": {
+        "orin.apiBase": {
+          "type": "string",
+          "default": "https://orinai.org",
+          "description": "Orin Core origin. HTTPS is required except explicit localhost development."
+        }
+      }
+    },
     "commands": [
       { "command": "orin.signIn", "title": "Orin: Sign in" },
       { "command": "orin.signOut", "title": "Orin: Sign out" },
@@ -31,7 +41,8 @@
   },
   "scripts": {
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
